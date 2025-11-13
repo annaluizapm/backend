@@ -2,11 +2,10 @@ require('dotenv').config({ path: __dirname + '/../.env' });
 const mysql = require('mysql2/promise');
 
 const dbConfig = {
-    host: process.env.MYSQL_HOST || process.env.DB_HOST || 'localhost',
-    user: process.env.MYSQL_USER || process.env.DB_USER || 'root',
-    password: process.env.MYSQL_PASSWORD || process.env.DB_PASSWORD || '',
-    database: process.env.MYSQL_DATABASE || process.env.DB_NAME || 'micro_midia',
-    port: parseInt(process.env.MYSQL_PORT || process.env.DB_PORT || '3306'),
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || '',
+    database: process.env.DB_NAME || 'micro_midia',
     waitForConnections: true,
     connectionLimit: 1, // Limite reduzido para serverless
     maxIdle: 1,
