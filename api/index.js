@@ -1201,6 +1201,21 @@ app.post('/api/criar-admin-inicial', async (req, res) => {
     }
 });
 
+// Rota raiz
+app.get('/', (req, res) => {
+    res.json({ 
+        message: 'MicroMídia API',
+        status: 'Online',
+        version: '1.0.0',
+        endpoints: {
+            test: '/api/test',
+            usuarios: '/api/usuarios',
+            postagens: '/api/postagens',
+            login: '/api/login'
+        }
+    });
+});
+
 // Rota de teste
 app.get('/api/test', (req, res) => {
     res.json({ message: 'API funcionando na Vercel!', timestamp: new Date().toISOString() });
